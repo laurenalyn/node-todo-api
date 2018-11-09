@@ -22,10 +22,19 @@ MongoClient.connect('mongodb://localhost:27017/TodoApp', (err, client) => {
     //     });
 
     // findOneAndDelete
-    db.collection('Todos').findOneAndDelete({completed: false})
+    // db.collection('Todos').findOneAndDelete({completed: false})
+    //     .then((result) => {
+    //         console.log(result);
+    //     });
+
+    // Exercise 1- remove all duplicate users
+
+    db.collection('Users').deleteMany({name: 'Lauren'})
         .then((result) => {
             console.log(result);
         });
+
+   
 
     // client.close();
 });
