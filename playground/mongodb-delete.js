@@ -29,10 +29,16 @@ MongoClient.connect('mongodb://localhost:27017/TodoApp', (err, client) => {
 
     // Exercise 1- remove all duplicate users
 
-    db.collection('Users').deleteMany({name: 'Lauren'})
-        .then((result) => {
-            console.log(result);
-        });
+    // db.collection('Users').deleteMany({name: 'Lauren'})
+    //     .then((result) => {
+    //         console.log(result);
+    //     });
+
+     // Exercise 2 - remove one by id
+     db.collection('Users').deleteOne({_id: ObjectID('5be4d7db82e38921abf2b833')})
+     .then((result) =>{
+         console.log(result);
+     });
 
    
 
