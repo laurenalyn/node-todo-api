@@ -16,9 +16,22 @@ MongoClient.connect('mongodb://localhost:27017/TodoApp', (err, client) => {
     //     }, (err) => {
     //     console.log('Unable to fetch todos', err);
     // });
+
+
     // retreives all docs from todo collection that are not completed
-    db.collection('Todos').find({completed:false}).toArray()
-    .then( (docs) => {
+//     db.collection('Todos').find({completed:false}).toArray()
+//     .then( (docs) => {
+//         console.log('Todos');
+//         console.log(JSON.stringify(docs, undefined, 2));
+//     }, (err) => {
+//     console.log('Unable to fetch todos', err);
+// });
+
+
+// retreives doc using the _id
+db.collection('Todos').find({
+    _id:new ObjectID('5be4d651b4f808218d1fc14c')
+    }).toArray().then( (docs) => {
         console.log('Todos');
         console.log(JSON.stringify(docs, undefined, 2));
     }, (err) => {
