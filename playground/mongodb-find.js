@@ -46,10 +46,18 @@ MongoClient.connect('mongodb://localhost:27017/TodoApp', (err, client) => {
     //     console.log('Unable to fetch todos', err);
     // });
 
-    db.collection('Users').find({name: 'Lauren'}).count().then( (count) => {
-        console.log(`Users count: ${count}`);
-    }, (err) => {
-    console.log('Unable to fetch user', err);
+    // retreives the count of users with the name of Lauren
+    // db.collection('Users').find({name: 'Lauren'}).count().then( (count) => {
+    //     console.log(`Users count: ${count}`);
+    // }, (err) => {
+    // console.log('Unable to fetch user', err);
+    // });
+
+    // retreives all users with name of Lauren
+    db.collection('Users').find({name: 'Lauren'}).toArray().then( (docs) => {
+        console.log(JSON.stringify(docs, undefined, 2));
+        }, (err) => {
+        console.log('Unable to fetch user', err);
     });
     
 
