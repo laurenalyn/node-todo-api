@@ -21,5 +21,21 @@ MongoClient.connect('mongodb://localhost:27017/TodoApp', (err, client) => {
         console.log(result);
     });
 
+    db.collection('Users').findOneAndUpdate({_id: new ObjectID('5be4d7c8a31d6721aadcab7a')},
+    {
+        $set:{
+            name: 'Lauren'
+        },
+        $inc: {
+            age: -1
+        }
+    },{
+        returnOriginal:false
+    }).then((result) => {
+        console.log(result);
+    });
+
     // client.close();
 });
+
+// users   update the user name to another name   and use $inc by 1
