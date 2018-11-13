@@ -35,12 +35,9 @@ MongoClient.connect('mongodb://localhost:27017/TodoApp', (err, client) => {
     //     });
 
      // Exercise 2 - remove one by id
-     db.collection('Users').deleteOne({_id: ObjectID('5be4d7db82e38921abf2b833')})
+     db.collection('Users').deleteOne({_id: new ObjectID('5be4d7db82e38921abf2b833')})
      .then((result) =>{
-         console.log(result);
+         console.log(JSON.stringify(result, undefined, 2));
      });
-
-   
-
     // client.close();
 });
