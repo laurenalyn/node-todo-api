@@ -19,6 +19,8 @@ let Todo = mongoose.model('Todo', {
     }
 });
 
+module.exports = {Todo};
+
 // creates a new instance of a Todo
 // let newTodo = new Todo({
 //     text: 'Cook dinner'
@@ -36,6 +38,3 @@ let Todo = mongoose.model('Todo', {
 // }, (error) => {
 //     console.log('Unable to save todo', error);
 // });
-
-
-module.exports = {Todo};
